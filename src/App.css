@@ -37,6 +37,12 @@ body {
   color: var(--text-color);
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Header */
 
 header {

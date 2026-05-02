@@ -11,7 +11,7 @@ export default function CountryDetail() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/data/data.json")
+    fetch(`${import.meta.env.BASE_URL}data/data.json`)
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((c) => c.name === name);
@@ -19,7 +19,7 @@ export default function CountryDetail() {
       });
   }, [name]);
 
-  if (!country) return <p>Loading...</p>;
+  if (!country) return <p className="loading">Loading...</p>;
 
   return (
     <>
