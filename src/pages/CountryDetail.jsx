@@ -10,14 +10,16 @@ export default function CountryDetail() {
 
   const navigate = useNavigate();
 
+  const decodedName = decodeURIComponent(name);
+
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/data.json`)
       .then((res) => res.json())
       .then((data) => {
-        const found = data.find((c) => c.name === name);
+        const found = data.find((c) => c.name === decodedName);
         setCountry(found);
       });
-  }, [name]);
+  }, [decodedName]);
 
   if (!country) return <p className="loading">Loading...</p>;
 

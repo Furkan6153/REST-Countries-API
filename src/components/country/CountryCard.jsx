@@ -5,7 +5,7 @@ export default function CountryCard({ country }) {
   const navigate = useNavigate();
 
   return (
-    <div onClick={() => navigate(`/countries/${country.name}`)} className="country-card">
+    <div onClick={() => navigate(`/countries/${encodeURIComponent(country.name)}`)} className="country-card">
       <div className="img-wrapper">
         <img
           draggable="false"
