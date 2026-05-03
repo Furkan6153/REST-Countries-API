@@ -10,7 +10,6 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
 
-
   useEffect(() => {
     const fetchCountries = async () => {
       try {
@@ -27,7 +26,6 @@ export default function Home() {
 
     fetchCountries();
   }, []);
-
 
   const filteredCountries = (allCountries || []).filter((c) => {
     const countryName =
